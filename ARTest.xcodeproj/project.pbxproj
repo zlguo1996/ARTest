@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A7EE74291FE143780095DFB3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EE74281FE143780095DFB3 /* main.cpp */; };
+		A718155A1FFA6A530074F359 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71815591FFA6A490074F359 /* OpenGL.framework */; };
+		A718155C1FFA6A6C0074F359 /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A718155B1FFA6A6C0074F359 /* libGLEW.2.0.0.dylib */; };
+		A718155E1FFA6A7F0074F359 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A718155D1FFA6A7F0074F359 /* libglfw.3.2.dylib */; };
+		A71815601FFA6A9D0074F359 /* openglmain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A718155F1FFA6A9D0074F359 /* openglmain.cpp */; };
+		A71815661FFA6D400074F359 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A71815641FFA6D400074F359 /* Graphics.cpp */; };
+		A76D9F0A1FF4CC65007B5696 /* PoseEstimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76D9F081FF4CC65007B5696 /* PoseEstimation.cpp */; };
+		A76D9F101FF51ECC007B5696 /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76D9F0E1FF51ECC007B5696 /* Tools.cpp */; };
+		A7EE74311FE15B0C0095DFB3 /* Markers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EE742F1FE15B0C0095DFB3 /* Markers.cpp */; };
+		A7EE74341FE1694A0095DFB3 /* CameraCalibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EE74321FE1694A0095DFB3 /* CameraCalibration.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +31,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A71815591FFA6A490074F359 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		A718155B1FFA6A6C0074F359 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../../../../../usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
+		A718155D1FFA6A7F0074F359 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		A718155F1FFA6A9D0074F359 /* openglmain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = openglmain.cpp; sourceTree = "<group>"; };
+		A71815641FFA6D400074F359 /* Graphics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Graphics.cpp; sourceTree = "<group>"; };
+		A71815651FFA6D400074F359 /* Graphics.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Graphics.hpp; sourceTree = "<group>"; };
+		A71815671FFB46400074F359 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		A71815681FFB46D70074F359 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		A76D9F081FF4CC65007B5696 /* PoseEstimation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PoseEstimation.cpp; sourceTree = "<group>"; };
+		A76D9F091FF4CC65007B5696 /* PoseEstimation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PoseEstimation.hpp; sourceTree = "<group>"; };
+		A76D9F0E1FF51ECC007B5696 /* Tools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
+		A76D9F0F1FF51ECC007B5696 /* Tools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tools.hpp; sourceTree = "<group>"; };
 		A7EE74251FE143780095DFB3 /* ARTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ARTest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7EE74281FE143780095DFB3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A7EE742F1FE15B0C0095DFB3 /* Markers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Markers.cpp; sourceTree = "<group>"; };
+		A7EE74301FE15B0C0095DFB3 /* Markers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Markers.hpp; sourceTree = "<group>"; };
+		A7EE74321FE1694A0095DFB3 /* CameraCalibration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CameraCalibration.cpp; sourceTree = "<group>"; };
+		A7EE74331FE1694A0095DFB3 /* CameraCalibration.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CameraCalibration.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +55,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A718155E1FFA6A7F0074F359 /* libglfw.3.2.dylib in Frameworks */,
+				A718155C1FFA6A6C0074F359 /* libGLEW.2.0.0.dylib in Frameworks */,
+				A718155A1FFA6A530074F359 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A71815581FFA6A490074F359 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A718155D1FFA6A7F0074F359 /* libglfw.3.2.dylib */,
+				A718155B1FFA6A6C0074F359 /* libGLEW.2.0.0.dylib */,
+				A71815591FFA6A490074F359 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A7EE741C1FE143780095DFB3 = {
 			isa = PBXGroup;
 			children = (
 				A7EE74271FE143780095DFB3 /* ARTest */,
 				A7EE74261FE143780095DFB3 /* Products */,
+				A71815581FFA6A490074F359 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +94,19 @@
 		A7EE74271FE143780095DFB3 /* ARTest */ = {
 			isa = PBXGroup;
 			children = (
-				A7EE74281FE143780095DFB3 /* main.cpp */,
+				A7EE742F1FE15B0C0095DFB3 /* Markers.cpp */,
+				A7EE74301FE15B0C0095DFB3 /* Markers.hpp */,
+				A76D9F081FF4CC65007B5696 /* PoseEstimation.cpp */,
+				A76D9F091FF4CC65007B5696 /* PoseEstimation.hpp */,
+				A7EE74321FE1694A0095DFB3 /* CameraCalibration.cpp */,
+				A7EE74331FE1694A0095DFB3 /* CameraCalibration.hpp */,
+				A76D9F0E1FF51ECC007B5696 /* Tools.cpp */,
+				A76D9F0F1FF51ECC007B5696 /* Tools.hpp */,
+				A718155F1FFA6A9D0074F359 /* openglmain.cpp */,
+				A71815641FFA6D400074F359 /* Graphics.cpp */,
+				A71815651FFA6D400074F359 /* Graphics.hpp */,
+				A71815671FFB46400074F359 /* Camera.h */,
+				A71815681FFB46D70074F359 /* Shader.h */,
 			);
 			path = ARTest;
 			sourceTree = "<group>";
@@ -88,6 +137,9 @@
 		A7EE741D1FE143780095DFB3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "郭子乐";
 				TargetAttributes = {
@@ -119,7 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7EE74291FE143780095DFB3 /* main.cpp in Sources */,
+				A7EE74341FE1694A0095DFB3 /* CameraCalibration.cpp in Sources */,
+				A76D9F101FF51ECC007B5696 /* Tools.cpp in Sources */,
+				A7EE74311FE15B0C0095DFB3 /* Markers.cpp in Sources */,
+				A76D9F0A1FF4CC65007B5696 /* PoseEstimation.cpp in Sources */,
+				A71815661FFA6D400074F359 /* Graphics.cpp in Sources */,
+				A71815601FFA6A9D0074F359 /* openglmain.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +291,40 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2ZD568S42;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/opencv3/3.2.0/include,
+					/usr/local/Cellar/opencv3/3.2.0/include/opencv2,
+					"$(glew_header)",
+					"$(glfw_header)",
+					"$(glm_header)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/opencv3/3.2.0/lib,
+					"$(glm_lib)",
+					"$(glfw_lib)",
+					"$(glew_lib)",
+					/usr/local/Cellar/glew/2.0.0/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lopencv_calib3d",
+					"-lopencv_core",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_highgui",
+					"-lopencv_imgcodecs",
+					"-lopencv_imgproc",
+					"-lopencv_ml",
+					"-lopencv_objdetect",
+					"-lopencv_photo",
+					"-lopencv_shape",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_video",
+					"-lopencv_videoio",
+					"-lopencv_videostab",
+					"-lopencv_aruco",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -243,6 +334,40 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2ZD568S42;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/opencv3/3.2.0/include,
+					/usr/local/Cellar/opencv3/3.2.0/include/opencv2,
+					"$(glew_header)",
+					"$(glfw_header)",
+					"$(glm_header)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/opencv3/3.2.0/lib,
+					"$(glm_lib)",
+					"$(glfw_lib)",
+					"$(glew_lib)",
+					/usr/local/Cellar/glew/2.0.0/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lopencv_calib3d",
+					"-lopencv_core",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_highgui",
+					"-lopencv_imgcodecs",
+					"-lopencv_imgproc",
+					"-lopencv_ml",
+					"-lopencv_objdetect",
+					"-lopencv_photo",
+					"-lopencv_shape",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_video",
+					"-lopencv_videoio",
+					"-lopencv_videostab",
+					"-lopencv_aruco",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
