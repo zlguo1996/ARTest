@@ -52,3 +52,10 @@ void glToCv(const Mat& gl, Mat& cv){
     glToCv.at<double>(3, 3) = 1.0f;
     cv = glToCv * gl;
 }
+
+void cvToGlm(const Mat& cv, glm::mat4& glm){
+
+}
+void glmToCv(const glm::mat4& glm, Mat& cv){
+    
+}

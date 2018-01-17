@@ -26,11 +26,13 @@ class PoseEstimation
 public:
     PoseEstimation();
     
-    bool getCharucoCornersIds(const Mat& image, const CameraCalibration& cc, vector<Point2f>& charucoCorners, vector<int>& charucoIds);
+    bool getCharucoCornersIds(const Mat& image, const CameraCalibration& cc, vector<Point2f>& charucoCorners, vector<int>& charucoIds) const;
     void constructAxis(const Mat& image, const CameraCalibration& cc);   //以棋盘格的位置建立坐标系
     
-    bool charucoBoardPoseEstimation(const Mat& image, const Markers& m, const CameraCalibration& cc, Mat& viewMatrix);
-    bool charucoMarkersPoseEstimation(const Mat& image, const Markers& m, const CameraCalibration& cc, vector<Mat>& viewMatrixs, vector<int>& ids);
+    bool charucoBoardPoseEstimation(const Mat& image, const Markers& m, const CameraCalibration& cc, Mat& viewMatrix) const;
+    bool charucoBoardPoseEstimation(const Mat& image, const Markers& m, const CameraCalibration& cc, Mat& tvec, Mat& rvec) const;
+    bool singleMarkersPoseEstimation(const Mat& image, const Markers& m, const CameraCalibration& cc, vector<Mat>& viewMatrixs, vector<int>& ids) const;
+    bool singleMarkersPoseEstimation(const Mat& image, const Markers& m, const CameraCalibration& cc, vector<Mat>& tvecs, vector<Mat>& rvecs, vector<int>& ids) const;
     
     Mat cameraViewMatrix;
 };

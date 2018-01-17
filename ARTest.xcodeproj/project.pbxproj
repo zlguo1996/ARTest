@@ -14,6 +14,7 @@
 		A71815661FFA6D400074F359 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A71815641FFA6D400074F359 /* Graphics.cpp */; };
 		A76D9F0A1FF4CC65007B5696 /* PoseEstimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76D9F081FF4CC65007B5696 /* PoseEstimation.cpp */; };
 		A76D9F101FF51ECC007B5696 /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76D9F0E1FF51ECC007B5696 /* Tools.cpp */; };
+		A7DF50CD1FFE501A00A47EC6 /* Dodecahedron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7DF50CB1FFE501A00A47EC6 /* Dodecahedron.cpp */; };
 		A7EE74311FE15B0C0095DFB3 /* Markers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EE742F1FE15B0C0095DFB3 /* Markers.cpp */; };
 		A7EE74341FE1694A0095DFB3 /* CameraCalibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EE74321FE1694A0095DFB3 /* CameraCalibration.cpp */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,8 @@
 		A76D9F091FF4CC65007B5696 /* PoseEstimation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PoseEstimation.hpp; sourceTree = "<group>"; };
 		A76D9F0E1FF51ECC007B5696 /* Tools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
 		A76D9F0F1FF51ECC007B5696 /* Tools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tools.hpp; sourceTree = "<group>"; };
+		A7DF50CB1FFE501A00A47EC6 /* Dodecahedron.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dodecahedron.cpp; sourceTree = "<group>"; };
+		A7DF50CC1FFE501A00A47EC6 /* Dodecahedron.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Dodecahedron.hpp; sourceTree = "<group>"; };
 		A7EE74251FE143780095DFB3 /* ARTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ARTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EE742F1FE15B0C0095DFB3 /* Markers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Markers.cpp; sourceTree = "<group>"; };
 		A7EE74301FE15B0C0095DFB3 /* Markers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Markers.hpp; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				A71815651FFA6D400074F359 /* Graphics.hpp */,
 				A71815671FFB46400074F359 /* Camera.h */,
 				A71815681FFB46D70074F359 /* Shader.h */,
+				A7DF50CB1FFE501A00A47EC6 /* Dodecahedron.cpp */,
+				A7DF50CC1FFE501A00A47EC6 /* Dodecahedron.hpp */,
 			);
 			path = ARTest;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				A76D9F0A1FF4CC65007B5696 /* PoseEstimation.cpp in Sources */,
 				A71815661FFA6D400074F359 /* Graphics.cpp in Sources */,
 				A71815601FFA6A9D0074F359 /* openglmain.cpp in Sources */,
+				A7DF50CD1FFE501A00A47EC6 /* Dodecahedron.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

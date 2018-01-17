@@ -31,9 +31,12 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+using namespace std;
+using namespace cv;
+
 // settings
-const unsigned int SCR_WIDTH = 1600;
-const unsigned int SCR_HEIGHT = 1000;
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 600;
 
 // camera
 Camera camera = Camera(SCR_WIDTH, SCR_HEIGHT);
@@ -45,8 +48,12 @@ bool firstMouse = true;
 float deltaTime = 0.0f;    // time between current frame and last frame
 float lastFrame = 0.0f;
 
-// tracking status
+// tracking
 bool isTracking = false;
+Mat currentFrameImage;
+CameraCalibration cc;
+PoseEstimation pe;
+Markers m;
 
 GLFWwindow* initGlfwGlew();
 
@@ -81,16 +88,13 @@ int main(){
     Points points = Points();
     
     // init opencv
-    CameraCalibration cc;
     cc.calibrateCamera();
-    
-    PoseEstimation pe;
-    Markers m;
     
     VideoCapture inputVideo;
     inputVideo.open(0);
     
     while (!glfwWindowShouldClose(window)) {
+        // OPENGL
         glfwPollEvents();
         process_key(window);
         
@@ -112,6 +116,45 @@ int main(){
         points.draw(camera.GetViewMatrix(), camera.GetProjectionMatrix());
         
         glfwSwapBuffers(window);
+        
+        // OPENCV
+        if (inputVideo.grab()) {
+            Mat image, image_copy;
+            inputVideo.retrieve(image);
+            image.copyTo(image_copy);
+            image.copyTo(currentFrameImage);
+            
+            if (isTracking) {
+                Mat viewMatrix;
+                bool flag = pe.charucoBoardPoseEstimation(image, m, cc, viewMatrix);
+                if (flag) {  // 恢复位置
+                    Mat trueviewm = pe.cameraViewMatrix.inv()*viewMatrix;
+                    string text = "offset: " + to_string(trueviewm.at<double>(0, 3)) + "," + to_string(trueviewm.at<double>(1, 3)) + "," + to_string(trueviewm.at<double>(2, 3));
+                    putText(image_copy, text, Point(0.0, 50.0), FONT_HERSHEY_SIMPLEX, 1.0, Scalar(0,0,255));
+
+                    //绘制charuco的坐标
+                    Mat rvec, tvec;
+                    getRvecTvecFromViewMatrix(viewMatrix, rvec, tvec);
+                    aruco::drawAxis(image_copy, cc.cameraMatrix, cc.distCoeffs, rvec, tvec, 0.1);
+                    
+                    glm::vec3 position = glm::vec3((float)trueviewm.at<double>(0, 3)*10, (float)trueviewm.at<double>(2, 3)*10, -(float)trueviewm.at<double>(1, 3)*10);
+                    text = "offset: " + to_string(position.x) + "," + to_string(position.y) + "," + to_string(position.z);
+                    cout << text << endl;
+                    points.addPoint(position);
+                }else { // 无法恢复位置
+                    string text = "no offset";
+
+                    putText(image_copy, text, Point(0.0, 50.0), FONT_HERSHEY_SIMPLEX, 1.0, Scalar(0,0,255));
+                }
+            }else {
+                string text = "no offset";
+                putText(image_copy, text, Point(0.0, 50.0), FONT_HERSHEY_SIMPLEX, 1.0, Scalar(0,0,255));
+            }
+
+            //glDrawPixels(image_copy.cols, image_copy.rows, GL_RGB, GL_UNSIGNED_BYTE, image_copy.data);
+
+            //imshow("out", image_copy);
+        }
     }
     
     glfwTerminate();
@@ -158,6 +201,22 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode){
     if (key==GLFW_KEY_ESCAPE && action==GLFW_PRESS) {
         glfwSetWindowShouldClose(window, GL_TRUE);
+    }
+    if (key==GLFW_KEY_C && action==GLFW_PRESS) {    // 标记相机位置
+        if (currentFrameImage.empty()) {
+            cout << "ERROR: No current frame" << endl;
+            return;
+        }
+        pe.constructAxis(currentFrameImage, cc);
+        cout << pe.cameraViewMatrix << endl;
+        cout << "start tracking" << endl;
+        isTracking = true;
+    }
+    if (key==GLFW_KEY_T && action==GLFW_PRESS) {    // 更改跟踪状态
+        if (pe.cameraViewMatrix.empty()) {
+            cout << "ERROR: Camera haven't been calibrated" << endl;
+        }
+        isTracking = !isTracking;
     }
 }
 void process_key(GLFWwindow* window){
